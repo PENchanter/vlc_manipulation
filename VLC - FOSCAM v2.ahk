@@ -30,6 +30,6 @@ ExitApp												; for testing purposes only.
 WinGetClass, vlcCLASS, VLC media player				; nothing, PID, CLASS, TITLE, works properly with the video stream window
 WinMove, ahk_class %vlcCLASS%,, 1376, 23 , 528, 406	; move and resize the video stream window
 Sleep, 1000
-ControlSend,, ^h, RTSP authentication				; hide some UI stuff
+ControlSend,, ^h, ahk_class %vlcCLASS				; hide some UI stuff
 
 ExitApp
