@@ -24,12 +24,16 @@ Sleep, 1000
 Clipboard := ""
 WinMinimize, VLC media player
 
-ExitApp												; for testing purposes only.
+^+x::
+	SetTitleMatchMode, 2
+	WinGetClass, vlcCLASS, VLC media player
+;	MsgBox, %vlcCLASS%
+	WinMove, ahk_class %vlcCLASS%,, 1376, 37 , 528, 406	; move and resize the video stream window
+	Sleep, 1000
+	ControlSend,, ^h, ahk_class %vlcCLASS%				; hide some UI stuff
+	ExitApp
+Return
 
-; ------------------------------------------------ 	; the following does not perform as desired
-WinGetClass, vlcCLASS, VLC media player				; nothing, PID, CLASS, TITLE, works properly with the video stream window
-WinMove, ahk_class %vlcCLASS%,, 1376, 23 , 528, 406	; move and resize the video stream window
-Sleep, 1000
-ControlSend,, ^h, ahk_class %vlcCLASS%				; hide some UI stuff
+ExitApp												; for testing purposes only.
 
 ExitApp
