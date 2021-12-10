@@ -17,7 +17,7 @@ Sleep, 2000
 
 ControlSend,, %username%{TAB}, RTSP authentication	; sends just fine even if "authentication" window does not have focus
 Sleep, 1000
-ControlSend,, ^v, RTSP authentication					; on its own line because experiencing trouble with this part...
+ControlSend,, ^v, RTSP authentication				; on its own line because experiencing trouble with this part...
 Sleep, 1000											; also, if this "authentication" window does not have focus,
 ControlSend,, {ENTER}, RTSP authentication			; '^v' does not send anything to it at all!!
 Sleep, 1000
@@ -30,6 +30,6 @@ ExitApp												; for testing purposes only.
 WinGetClass, vlcCLASS, VLC media player				; nothing, PID, CLASS, TITLE, works properly with the video stream window
 WinMove, ahk_class %vlcCLASS%,, 1376, 23 , 528, 406	; move and resize the video stream window
 Sleep, 1000
-ControlSend,, ^h, RTSP authentication					; hide some UI stuff
+ControlSend,, ^h, RTSP authentication				; hide some UI stuff
 
 ExitApp
