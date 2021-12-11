@@ -34,6 +34,4 @@ WinMinimize, VLC media player
 	ExitApp
 Return
 
-ExitApp												; for testing purposes only.
-
 ExitApp
